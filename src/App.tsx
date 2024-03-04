@@ -25,8 +25,8 @@ class Team extends React.Component<TeamProps> {
     const oneTeam = this.props;
 
     return (
-      <div>
-        <h2>{oneTeam.school}</h2>
+      <div className="background">
+        <h2 id={oneTeam.school}>{oneTeam.school}</h2>
         <h3>{oneTeam.name}</h3>
         <h3>
           {oneTeam.city}, {oneTeam.state}
@@ -34,6 +34,31 @@ class Team extends React.Component<TeamProps> {
       </div>
     );
   }
+}
+
+class LongTeamList extends React.Component<TeamProps> {
+  render() {
+    const oneTeam = this.props;
+
+    const pageLink = "#" + oneTeam.school;
+
+    return (
+      <div>
+        <a href={pageLink}>{oneTeam.school}</a>
+      </div>
+    );
+  }
+}
+
+function AllTeams() {
+  return (
+    <div className="background">
+      <h1>NCAA Basketball teams:</h1>
+      {teamsList.map((teamData) => (
+        <LongTeamList {...teamData} />
+      ))}
+    </div>
+  );
 }
 
 function TeamList() {
@@ -46,22 +71,33 @@ function TeamList() {
   );
 }
 
+function Description() {
+  return (
+    <div className="background">
+      <h1>NCAA March Madness Basketball</h1>
+      <p>
+        It's that time of year! The NCAA basketball tournament is about to
+        begin. 68 teams will compete against each other to be crown the national
+        champion. With so many team names floating around, it can be hard to
+        keep track of who is who. Use this site to match school names with team
+        names and locations.{" "}
+      </p>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img
+          src="https://lh3.googleusercontent.com/proxy/vdwiQc1YvKYzGw099wDbIyT8HT0iCgFTFPhPtaCEI6FZjNg_3uzMytWlMWkGXESLqkiloQYmkzQXGWuraau4SMpHlDCWyWkhTxt_XAk4rnZJsYdwWvY"
+          className="App-logo"
+          alt="A spinning basketball."
+        />
+        <Description />
+        <br />
+        <AllTeams />
         <TeamList />
       </header>
     </div>

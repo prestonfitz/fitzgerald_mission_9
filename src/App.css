@@ -21,11 +21,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #3e99b2;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +35,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.background {
+  background-color: aliceblue;
+  opacity: 0.5;
+  width: 75%;
+  border-radius: 10px;
 }
