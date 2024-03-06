@@ -1,7 +1,9 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import teams from "./CollegeBasketballTeams.json";
 import React from "react";
+// import an image
+import Basketball from "./basketball.jpg";
 
 // Import teams and then pull the data away from the key
 const teamsImport = teams;
@@ -99,7 +101,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img
-          src="https://lh3.googleusercontent.com/proxy/vdwiQc1YvKYzGw099wDbIyT8HT0iCgFTFPhPtaCEI6FZjNg_3uzMytWlMWkGXESLqkiloQYmkzQXGWuraau4SMpHlDCWyWkhTxt_XAk4rnZJsYdwWvY"
+          src={Basketball}
           className="App-logo"
           alt="A spinning basketball."
         />
