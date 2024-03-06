@@ -3,9 +3,11 @@ import "./App.css";
 import teams from "./CollegeBasketballTeams.json";
 import React from "react";
 
+// Import teams and then pull the data away from the key
 const teamsImport = teams;
 const teamsList = teamsImport.teams;
 
+// This defines the structure of the prop
 interface TeamProps {
   tid: number;
   cid: number;
@@ -20,6 +22,7 @@ interface TeamProps {
   longitude: number;
 }
 
+// This class is the data for one team. It is meant to be in it's own box. I think it looks better that way.
 class Team extends React.Component<TeamProps> {
   render() {
     const oneTeam = this.props;
@@ -36,6 +39,7 @@ class Team extends React.Component<TeamProps> {
   }
 }
 
+// This element is the class for the team list. It acts like a menu, linking to each individual team. It is in a box together, because it's a menu
 class LongTeamList extends React.Component<TeamProps> {
   render() {
     const oneTeam = this.props;
@@ -50,6 +54,7 @@ class LongTeamList extends React.Component<TeamProps> {
   }
 }
 
+// This puts the LongTeamList class into production
 function AllTeams() {
   return (
     <div className="background">
@@ -61,6 +66,7 @@ function AllTeams() {
   );
 }
 
+// This puts the Team class into production
 function TeamList() {
   return (
     <div>
@@ -71,6 +77,7 @@ function TeamList() {
   );
 }
 
+// The description box
 function Description() {
   return (
     <div className="background">
@@ -86,6 +93,7 @@ function Description() {
   );
 }
 
+// Main app
 function App() {
   return (
     <div className="App">
